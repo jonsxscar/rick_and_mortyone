@@ -1,25 +1,51 @@
 .container{
+    position: relative;
     display: flex;
-    justify-content: center;
     align-items: center;
-    border: ridge gray 5px;
-    background-color: beige;
+    border-radius: 1.5em;
     width: 15em;
     flex-direction: column;
-    margin: 0.5em;
-    padding: 1em;
+    margin: 1em;
+    border-top: 1em;
+    
     /*box-shadow: 10px;*/
 }
 
-.container h2{
-    margin: 0.2em 0em;
-    display: flex;
-    flex-wrap: wrap;
+.container .hcontainer{
+    display: grid;
+    grid-template-areas: repeat(auto-fill, minmax(10px, 1fr));
+    gap: 5px; /* Ajusta el espacio entre los elementos h2 */
+    color: rgb(130, 231, 231);
 }
 
+.container h2 {
+    display: block;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    margin: 0.2em 0em;
+    font-size: 15px;
+}
+
+.container:hover{
+    transform: scale(1.2);
+    background-color: rgba(0, 0, 0, 0.736);
+}
+
+.container:hover button {
+    opacity: 1;
+}
+
+.container:hover h2 {
+    opacity: 1;
+}
+
+
 .container img{
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    box-shadow: 0 0 20px #4f9;
     max-width: 100%;
     height: auto;
-    align-self: flex-end;
-    margin-top: auto;
+    border-radius: 1.5em;
 }

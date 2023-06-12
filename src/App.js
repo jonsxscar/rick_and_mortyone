@@ -8,8 +8,12 @@ function App() {
    return (
       <div className='App'>
          <div className='nav'>
-            <SearchBar onSearch={(characterID) => window.alert(characterID)} />
+            <h1>inicio</h1>
+            <h1>Jonnathan</h1>
+            <h1>Scarpetta</h1>
+            <h1>informacion</h1>
          </div>
+         <SearchBar onSearch={(characterID) => window.alert(characterID)} />
          <Cards characters={characters} />
          {/* <Card
             id={Rick.id}
