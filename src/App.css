@@ -1,38 +1,24 @@
+@font-face {
+   font-family: rick_and_morty;
+   src: url(../src/assets/fonts/get_schwifty.ttf);
+}
+
 .App {
-  text-align: center;
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   font-family: rick_and_morty;
+   font-size: small;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav{
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+   background-color: rgba(0, 0, 0, 0.736);
+   border-radius: 2em;
+   width: 93vw;
+   height: 4em;
+   margin: 1em 0;
 }

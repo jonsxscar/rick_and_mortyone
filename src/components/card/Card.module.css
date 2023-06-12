@@ -1,0 +1,25 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: ridge gray 5px;
+    background-color: beige;
+    width: 15em;
+    flex-direction: column;
+    margin: 0.5em;
+    padding: 1em;
+    /*box-shadow: 10px;*/
+}
+
+.container h2{
+    margin: 0.2em 0em;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container img{
+    max-width: 100%;
+    height: auto;
+    align-self: flex-end;
+    margin-top: auto;
+}
