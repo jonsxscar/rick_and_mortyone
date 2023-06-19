@@ -1,51 +1,26 @@
-.container{
-    position: relative;
-    display: flex;
-    align-items: center;
-    border-radius: 1.5em;
-    width: 15em;
-    flex-direction: column;
-    margin: 1em;
-    border-top: 1em;
-    
-    /*box-shadow: 10px;*/
-}
-
-.container .hcontainer{
-    display: grid;
-    grid-template-areas: repeat(auto-fill, minmax(10px, 1fr));
-    gap: 5px; /* Ajusta el espacio entre los elementos h2 */
-    color: rgb(130, 231, 231);
-}
-
-.container h2 {
-    display: block;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    margin: 0.2em 0em;
-    font-size: 15px;
-}
-
-.container:hover{
-    transform: scale(1.2);
-    background-color: rgba(0, 0, 0, 0.736);
-}
-
-.container:hover button {
-    opacity: 1;
-}
-
-.container:hover h2 {
-    opacity: 1;
-}
-
-
-.container img{
+.container {
     display: flex;
     justify-content: center;
-    align-items: stretch;
-    box-shadow: 0 0 20px #4f9;
-    max-width: 100%;
-    height: auto;
-    border-radius: 1.5em;
+    align-items: center;
+    border:ridge #84dd63 5px;
+    border-radius: 2em;
+    background-color: #6baa75;
+    width: 25em;
+    flex-direction: column;
+    padding: 1em;
+    margin: 2em;
+    box-shadow: rgba(216, 216, 216, 0.24) 0px 3px 8px;
+}
+
+.container button { /*la equis marco*/
+    border: solid #84DD63;
+    border-radius: 0.5em;
+    transition: transform 0.3s ease;
+    font-size: 1em;
+    color: rgb(43, 43, 43);
+    cursor: pointer;
+}
+
+.container button:hover {
+    transform: scale(1.3);
 }

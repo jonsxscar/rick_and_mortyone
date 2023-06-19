@@ -1,44 +1,14 @@
-@font-face {
+/* @font-face {
    font-family: rick_and_morty;
    src: url(../src/assets/fonts/get_schwifty.ttf);
-}
+} */
 
 .App {
-   display: flex;
    text-align: center;
+   display: flex;
    flex-direction: column;
    align-items: center;
    font-family: rick_and_morty;
-   font-size: small;
 }
 
-.nav{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   color: rgb(130, 231, 231);
-   background-color: rgba(0, 0, 0, 0.736);
-   border-radius: 2em;
-   width: 93vw;
-   height: 4em;
-   margin: 1em 0;
-}
 
-.nav h1{
-   margin: 0 20px ;
-}
-
-.nav h1:hover{
-   box-shadow: 0 0 20px #4f9;
-}
-
-@media (max-width: 768px) { /*toca arreglar*/
-   .nav {
-   flex-direction: column;
-   }
-
-   .nav h1 {
-   margin: 10px 10px;
-     margin-bottom: 10px; /* Ajusta el valor según el espacio deseado */
-   }
-}
