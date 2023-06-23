@@ -1,70 +1,160 @@
-# Getting Started with Create React App
+# **💪 HW10 | React Forms - Integration**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## **🕒 DURACIÓN ESTIMADA**
 
-## Available Scripts
+3 horas
 
-In the project directory, you can run:
+<br />
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<div align="center">
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## **💻 RICK AND MORTY APP 💻**
 
-### `npm test`
+</div>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## **📝 INTRODUCCIÓN**
 
-### `npm run build`
+En esta homework crearemos un sistema de login para nuestra aplicación. De esta forma podremos practicar formularios y, además, cada vez que ingresemos a la App tendremos que tener un email y una contraseña.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<br />
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## **📋 INSTRUCCIONES**
 
-### `npm run eject`
+### **👩‍💻 EJERCICIO 1 | Form**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Ahora crearemos el formulario que nos permitirá logearnos en un futuro.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Crea un componente con el nombre **`Form`**.
+2. Dentro de este componente se deben renderizar los siguientes elementos:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   -  Una etiqueta **`form`** que envolverá a todo el componente.
+   -  Una etiqueta **`label`** junto con un **`input`** para el email.
+   -  Una etiqueta **`label`** junto con un **`input`** para la password.
+   -  Un **`button`** con el texto "**_Submit_**".
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+¡Dale algo de estilos al componente! Puede quedar algo como esto...
 
-## Learn More
+<img src="./img/form.png" alt="" />
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<br />
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+### **👩‍💻 EJERCICIO 2 | Routing**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Ahora le diremos a nuestro formulario dónde debe renderizarse. Para esto:
 
-### Analyzing the Bundle Size
+1. Crea una ruta en el archivo **`App.js`** y crea una ruta para que el formulario se renderice en **`/`**.
+2. Si obervas la imagen del ejercicio anterior, la barra de navegación aún se muestra en el **login**. Deberás crear un renderizado condicional, de modo tal que la **`Nav`** se muestre siempre y cuando no estemos en la ruta **`/`**.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+> **PISTA:** investiga sobre el hook **`useLocation`** de react-router-dom, y piensa cómo hacer el renderizado condicional.
 
-### Making a Progressive Web App
+<br />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+### **👩‍💻 EJERCICIO 3 | Form control**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+En este ejercicio controlaremos y gestionaremos la información que ingrese el usuario en nuestro formulario. Para esto:
 
-### Deployment
+1. Crea un estado local llamado **userData**. Este debe inicializarse como un objeto con las propiedades **email** y **password** iguales a un string vacío.
+2. Conecta tu estado local con los inputs correspondientes utilizando la propiedad **`value`**.
+3. Crea una función llamada **handleChange** que nos permita reflejar el texto ingresado de los inputs en nuestro estado local.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+<br />
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### **👩‍💻 EJERCICIO 4 | Validaciones**
+
+1. En tu componente **`Form`** crea un nuevo estado local llamado "**errors**" que se inicialice como un objeto vacío. Este es el estado que utilizarás para encontrar errores en el formulario.
+
+2. Ahora crea un archivo con el nombre "**validation.js**". Aquí dentro deberás crear una función que valide los siguientes puntos:
+
+**EMAIL**
+
+-  el nombre de usuario tiene que ser un email (¡Explora validaciónes REGEX en internet!).
+-  el nombre de usuario no puede estar vacío.
+-  el nombre de usuario no puede tener más de 35 caracteres.
+
+**PASSWORD**
+
+-  la contraseña tiene que tener al menos un número.
+-  la contraseña tiene que tener una longitud entre 6 y 10 caracteres.
+
+¡No te olvides de renderizar y darle estilos a tus errores! Te dejamos un ejemplo de cómo puede quedar.
+
+<img src="./img/validations.png" alt="" >
+
+<br />
+
+---
+
+### **👩‍💻 EJERCICIO 5 | Seguridad**
+
+Ahora simularemos una base de datos donde esté guardado un email y password. De esta forma, solo si la información de usuario coincide podrá ingresar a la aplicación. Para esto:
+
+1. En el archivo **`App.js`** crea lo siguiente:
+
+   -  Un estado local llamado "**access**" que se inicialice en **`false`**.
+   -  Una variable llamada "**EMAIL**", y que sea igual a tu email.
+   -  Una variable "**PASSWORD**", y que sea igual a una contraseña.
+
+</br >
+
+2. Crea una función llamada "**login**" que reciba por parámetro "_userData_". Esta función tiene que preguntar si el email y password que declaraste más arriba son iguales a los que les está llegando por parámetro. En caso afirmativo, el estado local access ahora será **`true`**. Importa el hook "**useNavigate**" de _react-router-dom_ y haremos que nos redirija a **`/home`** si la información es correcta.
+
+```jsx
+const navigate = useNavigate();
+const [access, setAccess] = useState(false);
+const EMAIL = 'ejemplo@gmail.com';
+const PASSWORD = 'unaPassword';
+
+function login(userData) {
+   if (userData.password === PASSWORD && userData.email === EMAIL) {
+      setAccess(true);
+      navigate('/home');
+   }
+}
+```
+
+3. Por último, lleva el siguiente código a tu componente (no te olvides de importar el **`useEffect`**).
+
+```javascript
+// App.js
+useEffect(() => {
+   !access && navigate('/');
+}, [access]);
+```
+
+<br />
+
+---
+
+### **👩‍💻 EJERCICIO 6 | Login**
+
+¡Ahora le daremos la funcionalidad de cambiar los permisos a nuestro login!
+
+1. Dirígete al archivo **`App.js`** y pásale la función **login** que creaste en el ejercicio anterior al componente **`Form`** mediante props.
+
+2. En el componente **`Form`** crea una función "**handleSubmit**". Esta función recibe un evento por parámetro. Deberás ejecutas la función **`e.preventDefault()`**. Luego ejecuta la función "**login**" recibida por props. ¡No te olvides de pasarle por parámetro tu estado local _`userData`_!
+
+3. La función **handleSubmit** debe ejecutarse cuando se hace click en el botón **submit**.
+
+¡Listo! Ya tienes un login funcional 😀🥳🤓
+
+Pruebalo ingresando la información que declaraste previamente.
+
+<br />
+
+---
+
+### **📌 EJERCICIO EXTRA**
+
+Te desafiamos a que crees un botón "**Log out**" en tu componente **`Nav`**. Si lo presionas debe quitar los permisos de acceso y redirigirte automáticamente a tu componente **`Form`**.
+
+> [**NOTA**]: lo puedes hacer creando una función **logout** en tu archivo App.js.
