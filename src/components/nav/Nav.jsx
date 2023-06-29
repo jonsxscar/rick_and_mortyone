@@ -18,6 +18,9 @@ class Nav extends React.Component{
             <NavLink to={'/about'}>
                 <span>About</span>
             </NavLink>
+            <NavLink to={'/favorites'}>
+                <span>Favorites</span>
+            </NavLink>
             <SearchBar onSearch={this.props.onSearch}/>
         </nav>
     }
