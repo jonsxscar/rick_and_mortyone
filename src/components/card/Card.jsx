@@ -17,12 +17,13 @@ function Card({
   addFav,
   removeFav,
   myFavorites,
+  allCharacters
 }) {
   const { pathname } = useLocation();
   const [isFav, setIsFav] = useState(false);
 
   useEffect(() => {
-    myFavorites.forEach((charFav) => {
+    myFavorites.forEach((charFav) => {//all characters
       if (charFav.id === id) {
         setIsFav(true);
       }
@@ -73,7 +74,7 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state) {
   return {
-    myFavorites: state.myFavorites,
+    myFavorites: state.myFavorites,//allcharacters
   };
 }
 
