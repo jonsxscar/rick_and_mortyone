@@ -21,26 +21,35 @@ function Form({ login }) {
         setUserData({...userData, [nameProperty]:value})
     }
 
-    function handleSubmit(evento){
-        evento.preventDefault()
-        login(userData)
-    }
+    function handleSubmit(evento) {
+        evento.preventDefault();
+        
+        const formErrors = validation(userData);
+      
+        if (Object.keys(formErrors).length === 0) {
+          login(userData);
+        } else {
+          setErrors(formErrors);
+        }
+      }
     
     return <div>
             <form className= {style.form} onSubmit={handleSubmit} >
-                <label className= {style.label} htmlFor="">
+                <label className= {style.label} htmlFor="email">
                     email:
                     <input className= {style.input}
                         type="text" 
+                        id="email"//prueba
                         value={userData.email}
                         name="email"
                         onChange={handleChange} />
                 </label>
                 <span style={{color:"white"}} >{errors.email}</span>
-                <label className= {style.label} htmlFor="">
+                <label className= {style.label} htmlFor="password">
                     password:
                     <input className= {style.input}
                         type="password" 
+                        id="password"
                         value={userData.password}
                         name="password"
                         onChange={handleChange} />

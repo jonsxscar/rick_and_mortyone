@@ -1,9 +1,9 @@
 import React from "react";
-//import { connect } from "react-redux";//creo q borro
+//import { connect } from "react-redux";
 import Card from "../card/Card";
 import { filterCards, orderCards } from "../../redux/actions";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";//reemplazan a connect
 
 
 function Favorites() {
