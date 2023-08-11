@@ -5,10 +5,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("https://free4kwallpapers.com/uploads/originals/2022/06/08/rick-n-morty-wallpaper.jpg");
+  background-image: url('../img/wallpaperflare.com_wallpaper.jpg');
   background-attachment: fixed;
-  background-size: cover;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
+
+  
 }
 
 

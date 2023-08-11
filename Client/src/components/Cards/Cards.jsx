@@ -6,9 +6,7 @@ const CardsStyle = styled.div`
   grid-template-columns: 20% 20% 20% 20%;
   justify-content: space-evenly;
   padding: 5px;
-  width: 100%;
   margin: auto;
-  height: 110vh;
 `;
 
 export default function Cards({ characters, onClose }) {

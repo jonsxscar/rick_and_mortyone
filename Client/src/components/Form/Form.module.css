@@ -4,17 +4,23 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 10px;
+  padding: 100px;
   margin-top: 60px;
   border-radius: 0.3rem;
   border: none;
-  background-color: rgb(4, 4, 29);
+  background-image: url(../../../img/wallpaperflare.com_wallpaper\ \(1\).jpg);
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  /* background-color: rgb(4, 4, 29); */
   box-shadow: 3px 6px 15px 4px rgb(20, 9, 2);
   outline: 4px solid rgb(12, 12, 87);
 }
 
 .warning {
   color: rgb(198, 250, 10);
+  background-color: rgba(41, 143, 28, 0.726);
+  border-radius: 0.5rem;
 }
 
 p {

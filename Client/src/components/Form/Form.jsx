@@ -46,9 +46,8 @@ export default function Form({ login }) {
           name="email"
           value={userData.email}
           onChange={handleInputChange}
-          className={errors.email && styles.warning}
         />
-        <p className="danger">{errors.email}</p>
+        <p className={styles.warning}>{errors.email}</p>
 
         <label>Password</label>
         <input
@@ -57,9 +56,9 @@ export default function Form({ login }) {
           value={userData.password}
           onChange={handleInputChange}
         />
-        <p className="danger">{errors.password}</p>
+        <p className={styles.warning}>{errors.password}</p>
 
-        <button className="boton" type="submit" onClick={handleSubmit}>
+        <button className={styles.boton} type="submit" onClick={handleSubmit}>
           SUBMIT
         </button>
       </form>

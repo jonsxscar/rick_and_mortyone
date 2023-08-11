@@ -1,5 +1,5 @@
 import styles from "./Card.module.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { addFav, removeFav } from "../../redux/actions";
 import { connect } from "react-redux";
 import { useState, useEffect } from "react";
@@ -39,17 +39,24 @@ export function Card({
     }
   };
 
+  const location = useLocation(); // Obtén la ruta actual
+  const pathname = location.pathname; // Obtén el pathname
+
   useEffect(() => {
     allCharacters?.forEach((fav) => {
       if (fav.id === id) {
         setIsFav(true);
       }
     });
-  }, [allCharacters]);
+  }, [allCharacters, id]);
 
   return (
     <div className={styles.tarjeta}>
       <div className={styles.botones}>
+      {pathname === "/home" && (  // Usando pathname para renderizar el botón de cierre
+          <button className={styles.boton} onClick={() => onClose(id)}>
+            X
+          </button>)}
         {isFav ? (
           <button className={styles.boton2} onClick={handleFavorite}>
             ❤️
@@ -59,9 +66,9 @@ export function Card({
             🤍
           </button>
         )}
-        <button className={styles.boton} onClick={() => onClose(id)}>
+        {/* <button className={styles.boton} onClick={() => onClose(id)}>
           X
-        </button>
+        </button> */}
       </div>
       <img className={styles.image} src={image} alt="img-card" />
       <Link to={`/detail/${id}`}>

@@ -18,25 +18,29 @@ function App() {
 
   useEffect(() => {
     !access && navigate('/');
-  }, [access]);
+  }, [access, navigate]);
 
   const URL = 'http://localhost:3001/rickandmorty/';
 
   async function login(userData) {
     const { email, password } = userData;
-
+  
     try {
       const { data } = await axios(
         `${URL}login?email=${email}&password=${password}`
       );
-
-      const { access } = data;
-
+  
+      const { access} = data;
+  
       setAccess(access);
-
-      access && navigate('/home');
-    } catch (error) {
-      window.alert(error.message);
+  
+      if (access) {
+        navigate('/home');
+      } 
+      }
+     catch (error) {
+      // Captura errores de red u otros errores inesperados
+      window.alert('Acceso denegado. Usuario incorrecto.');
     }
   }
 
@@ -46,6 +50,18 @@ function App() {
   }
 
   async function onSearch(id) {
+    // Verifica si no se ha ingresado un ID
+    if (!id) {
+      alert("Ingresa un ID");
+      return;
+    }
+  
+    // Verifica si el personaje con el ID ya existe en la lista
+    if (characters.find((char) => char.id === parseInt(id))) {
+      alert(`Ya existe el personaje con el ID ${id}`);
+      return;
+    }
+  
     try {
       const { data } = await axios(
         `http://localhost:3001/rickandmorty/character/${id}`
@@ -76,7 +92,7 @@ function App() {
           element={<Cards characters={characters} onClose={onClose} />}
         />
         <Route path='/about' element={<About />} />
-        <Route path='/favorites' element={<Favorites />} />
+        <Route path='/favorites' element={<Favorites/>} />
         <Route path='/detail/:id' element={<Detail />} />
         <Route path='*' element={<Error />} />
       </Routes>

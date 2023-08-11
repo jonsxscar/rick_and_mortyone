@@ -3,6 +3,7 @@ import Card from '../Card/Card';
 import styled from 'styled-components';
 import { filterCards, orderCards } from '../../redux/actions';
 import { useState } from 'react';
+import Cards from '../Cards/Cards';
 
 export const FavoriteStyle = styled.div`
   display: grid;
@@ -18,6 +19,7 @@ const Favorites = () => {
   const [aux, setAux] = useState(false);
   const dispatch = useDispatch();
   const myFavorites = useSelector((state) => state.myFavorites);
+  
 
   const handleOrder = (e) => {
     dispatch(orderCards(e.target.value));
@@ -36,6 +38,7 @@ const Favorites = () => {
           <option value='D'>Descendente</option>
         </select>
         <select onChange={handleFilter}>
+          <option value='All'>All</option>
           <option value='Male'>Male</option>
           <option value='Female'>Female</option>
           <option value='Genderless'>Genderless</option>
@@ -53,6 +56,7 @@ const Favorites = () => {
             origin={fav.origin}
             gender={fav.gender}
             image={fav.image}
+            onClose={fav.onClose}
           />
         ))}
       </FavoriteStyle>
