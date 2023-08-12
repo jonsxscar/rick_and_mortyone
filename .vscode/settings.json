@@ -1,4 +1,15 @@
 {
     "vscode-pets.theme": "castle",
-    "vscode-pets.petSize": "small"
+    "vscode-pets.petSize": "small",
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "rickandmorty",
+            "database": "postgres",
+            "username": "postgres"
+        }
+    ]
 }
